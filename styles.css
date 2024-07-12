@@ -1,0 +1,124 @@
+@font-face {
+    font-family: 'Inter';
+    src: url(FONT/Inter-Regular.ttf)
+}
+
+@keyframes rainbow-color-fill-2 {
+    0% {
+        background-color: var(--clr-1);
+    }
+    20% {
+        background-color: var(--clr-2);
+    }
+    40% {
+        background-color: var(--clr-3);
+    }
+    60% {
+        background-color: var(--clr-4);
+    }
+    80% {
+        background-color: var(--clr-5);
+    }
+    100% {
+        background-color: var(--clr-6);
+    }
+}
+
+:root {
+    --clr-1: #DAB9ff;
+    --clr-2: #FFB9B9;
+    --clr-3: #FFFEB9;
+    --clr-4: #B9FFCC;
+    --clr-5: #B9C9FF;
+    --clr-6: #DAB9FF;
+    --clr-background: #1f1f1f;
+    --clr-text: #cccccc;
+    --clr-border: #3b3b3b;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #1f1f1f;
+    padding: 10rem 2rem;
+}
+
+p, label {
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    color: var(--clr-text);
+}
+
+@media (max-width: 960px) {
+    p {
+        font-size: 16px
+    }
+}
+
+/*----------------------------- STYLES -----------------------------*/
+
+.calculator-container {
+    width: 100%;
+    max-width: 800px;
+    padding: 1rem;
+    border: 1px solid var(--clr-border);
+    margin: auto;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+}
+
+.sub-list {
+    margin-left: 2rem;
+    display: none;
+}
+
+.list-item, .sub-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.calculator p {
+    color: var(--clr-border)
+}
+
+.custom-checkbox {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.custom-checkbox .checkmark {
+    width: 1rem;
+    height: 1rem;
+    max-width: 1rem;
+    max-width: 1rem;
+    
+    border: 1px solid var(--clr-border);
+    background: transparent;
+    display: inline-block;
+}
+.custom-checkbox input:checked + .checkmark {
+    animation: rainbow-color-fill-2 1.5s infinite linear;
+}
+.custom-checkbox input:checked ~ .sublabel {
+    color: var(--clr-text);
+}
+.custom-checkbox input {
+    display: none;
+}
+
+.calculator-number {
+    font-family: "Inter", sans-serif;
+    color: var(--clr-text);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
